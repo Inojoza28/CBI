@@ -1,0 +1,226 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Variáveis de cores */
+  :root {
+    --bg-color: #f0f4f8;
+    --text-color: #333;
+    --primary-color: #28a745; /* Verde minimalista */
+    --secondary-color: #ffffff;
+    --accent-color: #1d7a3a; /* Verde escuro para destaque */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  body.dark {
+    --bg-color: #121212;
+    --text-color: #f5f5f5;
+    --primary-color: #28a745;
+    --secondary-color: #1e1e1e;
+    --accent-color: #1d7a3a;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Estilo geral */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Header */
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  
+  header p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+  }
+  
+  /* Main */
+  main {
+    margin: 20px 0;
+  }
+  
+  input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
+  }
+  
+  /* Dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .dropdown-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .dropdown-btn i {
+    margin-right: 8px;
+  }
+  
+  .dropdown-btn:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 100;
+    width: 100%;
+  }
+  
+  .dropdown-menu button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .dropdown-menu button:hover {
+    background-color: var(--bg-color);
+    border-radius: 5px;
+  }
+  
+  /* Result */
+  .result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    transition: background-color 0.3s;
+  }
+  
+  /* Histórico */
+  .history {
+    margin-top: 15px;
+    text-align: left;
+    background-color: var(--bg-color);
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    overflow-y: auto;
+    max-height: 150px;
+  }
+  
+  .history p {
+    margin-bottom: 5px;
+    word-break: break-word;
+  }
+  
+  /* Footer */
+  footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+  
+  footer p {
+    color: var(--text-color);
+  }
+  
+  #toggle-theme {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+  }
+  
+  #toggle-theme:hover {
+    transform: rotate(20deg);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.8rem;
+    }
+  
+    input {
+      font-size: 0.9rem;
+    }
+  
+    .dropdown-btn {
+      font-size: 0.9rem;
+      padding: 10px 15px;
+    }
+  
+    .dropdown-menu button {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  }
+  
